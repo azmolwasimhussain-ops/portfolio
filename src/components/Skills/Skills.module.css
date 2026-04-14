@@ -1,0 +1,164 @@
+/* ──────────────────────────────────────────
+   Section
+────────────────────────────────────────── */
+.skillsSection {
+  padding: 110px 0;
+  background-color: var(--color-bg-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  margin-top: -2rem;
+  margin-bottom: 3.5rem;
+}
+
+/* ──────────────────────────────────────────
+   Grid
+────────────────────────────────────────── */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ──────────────────────────────────────────
+   Skill Card
+────────────────────────────────────────── */
+.skillCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--border-radius-md);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skillCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), var(--shadow-glow);
+}
+
+.skillCard:hover::before {
+  opacity: 1;
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.categoryTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* ──────────────────────────────────────────
+   Skill Pill List
+────────────────────────────────────────── */
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skillPill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.skillPill:hover {
+  color: var(--color-text-primary);
+  background: rgba(99, 102, 241, 0.08);
+  transform: translateX(4px);
+}
+
+.pillDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  flex-shrink: 0;
+}
+
+/* ──────────────────────────────────────────
+   "Currently Learning" Strip
+────────────────────────────────────────── */
+.learningStrip {
+  margin-top: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.learningLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.3px;
+}
+
+.learningTag {
+  background: linear-gradient(135deg,
+    rgba(99, 102, 241, 0.15),
+    rgba(236, 72, 153, 0.15)
+  );
+  color: var(--color-text-primary);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: var(--border-radius-full);
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.learningTag:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(236, 72, 153, 0.3));
+  transform: scale(1.05);
+}
+
+/* ──────────────────────────────────────────
+   Responsive
+────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+}

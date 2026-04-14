@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap');
+
+/* ──────────────────────────────────────────
+   Design Tokens
+────────────────────────────────────────── */
+:root {
+  --color-bg-base: #0d0f14;
+  --color-bg-surface: #13161e;
+  --color-bg-surface-hover: #1c2030;
+
+  --color-text-primary: #f1f2f6;
+  --color-text-secondary: #8b92a5;
+
+  --color-accent-primary: #6366f1;
+  --color-accent-primary-hover: #818cf8;
+  --color-accent-secondary: #ec4899;
+
+  --font-primary: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 14px;
+  --border-radius-lg: 24px;
+  --border-radius-full: 9999px;
+
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --shadow-glow: 0 0 24px rgba(99, 102, 241, 0.25);
+}
+
+/* ──────────────────────────────────────────
+   Reset & Base
+────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-primary) var(--color-bg-surface);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-base); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-primary);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-accent-primary-hover); }
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+a        { text-decoration: none; color: inherit; }
+ul, ol   { list-style: none; }
+button   { cursor: pointer; border: none; background: none; font-family: inherit; }
+img      { max-width: 100%; display: block; }
+
+/* ──────────────────────────────────────────
+   Layout Utilities
+────────────────────────────────────────── */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ──────────────────────────────────────────
+   Section Title (shared)
+────────────────────────────────────────── */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+  border-radius: var(--border-radius-full);
+}
+
+/* ──────────────────────────────────────────
+   Gradient Text Helper
+────────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ──────────────────────────────────────────
+   Focus Visible (Accessibility)
+────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

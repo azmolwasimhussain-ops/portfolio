@@ -1,0 +1,272 @@
+/* ──────────────────────────────────────────
+   Header / Base
+────────────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 76px;
+  background: rgba(15, 17, 21, 0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid transparent;
+  transition: height 0.3s ease, background 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  height: 64px;
+  background: rgba(15, 17, 21, 0.95);
+  border-bottom-color: var(--border-subtle);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ──────────────────────────────────────────
+   Nav Row
+────────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 2.5rem;
+}
+
+/* ──────────────────────────────────────────
+   Logo
+────────────────────────────────────────── */
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  margin-right: auto;
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+.logoDot {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-primary),
+    var(--color-accent-secondary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ──────────────────────────────────────────
+   Desktop Nav Links
+────────────────────────────────────────── */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  position: relative;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-primary),
+    var(--color-accent-secondary)
+  );
+  border-radius: 9999px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLink:hover {
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+  width: 70%;
+}
+
+.navLink.active {
+  color: var(--color-text-primary);
+}
+
+/* ──────────────────────────────────────────
+   Social Icons (desktop)
+────────────────────────────────────────── */
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.socialIcon:hover {
+  color: var(--color-accent-primary);
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ──────────────────────────────────────────
+   Hamburger Button
+────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--color-text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.hamburger:hover {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--color-accent-primary);
+}
+
+.hamburger.open {
+  color: var(--color-accent-primary);
+}
+
+/* ──────────────────────────────────────────
+   Backdrop Overlay (mobile)
+────────────────────────────────────────── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.2s ease;
+}
+
+/* ──────────────────────────────────────────
+   Mobile Drawer
+────────────────────────────────────────── */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(320px, 80vw);
+  height: 100dvh;
+  background: var(--color-bg-surface);
+  border-left: 1px solid var(--border-subtle);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+  transition: right 0.35s cubic-bezier(0.8, 0, 0.2, 1);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.mobileMenu.mobileOpen {
+  right: 0;
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.mobileNavLink {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  color: var(--color-accent-primary);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.mobileSocial {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ──────────────────────────────────────────
+   Responsive Breakpoints
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .navLinks,
+  .socialIcons {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ──────────────────────────────────────────
+   Keyframes
+────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
