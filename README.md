@@ -3,7 +3,6 @@
 > 💼 Open for internships | Frontend Developer | React.js
 
 🌐 Live Demo: https://azmol-portfolio.vercel.app/
-📂 GitHub Repo: https://github.com/azmolwasimhussain-ops/portfolio
 
 ---
 
