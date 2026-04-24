@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap');
 
-/* ──────────────────────────────────────────
-   Design Tokens
-────────────────────────────────────────── */
 :root {
   --color-bg-base: #0d0f14;
   --color-bg-surface: #13161e;
@@ -31,9 +28,6 @@
   --shadow-glow: 0 0 24px rgba(99, 102, 241, 0.25);
 }
 
-/* ──────────────────────────────────────────
-   Reset & Base
-────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -44,7 +38,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* Custom scrollbar */
   scrollbar-width: thin;
   scrollbar-color: var(--color-accent-primary) var(--color-bg-surface);
 }
@@ -78,9 +71,6 @@ ul, ol   { list-style: none; }
 button   { cursor: pointer; border: none; background: none; font-family: inherit; }
 img      { max-width: 100%; display: block; }
 
-/* ──────────────────────────────────────────
-   Layout Utilities
-────────────────────────────────────────── */
 .App {
   min-height: 100vh;
   display: flex;
@@ -98,9 +88,6 @@ main {
   padding: 0 2rem;
 }
 
-/* ──────────────────────────────────────────
-   Section Title (shared)
-────────────────────────────────────────── */
 .section-title {
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -126,9 +113,6 @@ main {
   border-radius: var(--border-radius-full);
 }
 
-/* ──────────────────────────────────────────
-   Gradient Text Helper
-────────────────────────────────────────── */
 .text-gradient {
   background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
   -webkit-background-clip: text;
@@ -136,9 +120,6 @@ main {
   background-clip: text;
 }
 
-/* ──────────────────────────────────────────
-   Focus Visible (Accessibility)
-────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--color-accent-primary);
   outline-offset: 3px;

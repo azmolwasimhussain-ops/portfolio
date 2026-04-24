@@ -17,7 +17,6 @@
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
 }
 
-/* Corner glow that fades in on hover */
 .glowAccent {
   position: absolute;
   top: -50px;
@@ -36,7 +35,6 @@
   opacity: 1;
 }
 
-/* ── Header ── */
 .header {
   display: flex;
   align-items: center;
@@ -87,10 +85,9 @@
 }
 
 .starIcon {
-  color: #fbbf24; /* yellow star color */
+  color: #fbbf24;
 }
 
-/* ── Body ── */
 .title {
   font-family: var(--font-heading);
   font-size: 1.3rem;
@@ -114,7 +111,6 @@
   z-index: 1;
 }
 
-/* ── Tech tags ── */
 .techList {
   display: flex;
   flex-wrap: wrap;

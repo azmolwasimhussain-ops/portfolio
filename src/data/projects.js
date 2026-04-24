@@ -1,8 +1,3 @@
-/**
- * src/data/projects.js
- * Central source of truth for all portfolio projects.
- * Add / remove / reorder objects here — the UI updates automatically.
- */
 
 export const projects = [
   {

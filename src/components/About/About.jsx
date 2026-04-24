@@ -22,7 +22,6 @@ const About = () => {
         </motion.h2>
 
         <div className={styles.aboutGrid}>
-          {/* ── Left: Photo + Stats ── */}
           <motion.div
             className={styles.leftCol}
             variants={slideLeft}
@@ -57,7 +56,6 @@ const About = () => {
             </motion.div>
           </motion.div>
 
-          {/* ── Right: Bio + Tags ── */}
           <motion.div
             className={styles.rightCol}
             variants={slideRight}

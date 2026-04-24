@@ -11,7 +11,6 @@
   margin-bottom: 3.5rem;
 }
 
-/* ── Loading State ── */
 .loadingContainer {
   display: flex;
   flex-direction: column;
@@ -37,14 +36,12 @@
   to { transform: rotate(360deg); }
 }
 
-/* Responsive auto-fill grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.75rem;
 }
 
-/* CTA row */
 .cta {
   display: flex;
   justify-content: center;

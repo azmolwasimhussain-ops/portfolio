@@ -9,7 +9,6 @@
   z-index: 10;
   transform: translate(-50%, -50%);
   
-  /* We use a subtle radial gradient so the center is brighter */
   background: radial-gradient(
     circle,
     rgba(99, 102, 241, 0.12) 0%,
@@ -17,13 +16,12 @@
     transparent 70%
   );
   
-  /* Blurring helps blend the glow slightly */
   filter: blur(20px);
   mix-blend-mode: screen;
 }
 
 @media (max-width: 768px) {
   .cursorGlow {
-    display: none; /* Hide on mobile to avoid performance issues/unnecessary effects */
+    display: none;
   }
 }

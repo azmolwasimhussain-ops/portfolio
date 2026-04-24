@@ -6,7 +6,6 @@ const CursorGlow = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  // Use spring physics for smooth, non-distracting trailing effect
   const springConfig = { damping: 40, stiffness: 200, mass: 0.5 };
   const smoothX = useSpring(cursorX, springConfig);
   const smoothY = useSpring(cursorY, springConfig);

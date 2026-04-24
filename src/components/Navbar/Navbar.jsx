@@ -50,7 +50,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) setMenuOpen(false);
@@ -66,7 +65,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Backdrop overlay for mobile menu */}
       {menuOpen && (
         <div className={styles.backdrop} onClick={() => setMenuOpen(false)} />
       )}
@@ -74,12 +72,10 @@ const Navbar = () => {
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
         <nav className={`${styles.nav} container`}>
 
-          {/* ── Logo ── */}
           <a href="#home" className={styles.logo} onClick={() => handleNavClick('#home')}>
             Azmol<span className={styles.logoDot}>.</span>
           </a>
 
-          {/* ── Desktop Nav Links ── */}
           <ul className={styles.navLinks}>
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -94,7 +90,6 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* ── Desktop Social Icons ── */}
           <div className={styles.socialIcons}>
             {socialLinks.map(({ icon: Icon, href, label }) => (
               <a
@@ -110,7 +105,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* ── Hamburger (mobile) ── */}
           <button
             className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -121,7 +115,6 @@ const Navbar = () => {
           </button>
         </nav>
 
-        {/* ── Mobile Drawer ── */}
         <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileOpen : ''}`}>
           <ul className={styles.mobileNavLinks}>
             {navLinks.map((link) => (

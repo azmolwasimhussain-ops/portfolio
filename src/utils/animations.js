@@ -1,6 +1,3 @@
-// Shared Framer Motion variants for consistent animations across the portfolio
-
-/** Fade up — default entrance for most elements */
 export const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -10,7 +7,6 @@ export const fadeUp = {
   },
 };
 
-/** Fade in only (no movement) */
 export const fadeIn = {
   hidden: { opacity: 0 },
   visible: {
@@ -19,7 +15,6 @@ export const fadeIn = {
   },
 };
 
-/** Scale in — great for photos / cards */
 export const scaleIn = {
   hidden: { opacity: 0, scale: 0.88 },
   visible: {
@@ -29,7 +24,6 @@ export const scaleIn = {
   },
 };
 
-/** Slide in from left */
 export const slideLeft = {
   hidden: { opacity: 0, x: -50 },
   visible: {
@@ -39,7 +33,6 @@ export const slideLeft = {
   },
 };
 
-/** Slide in from right */
 export const slideRight = {
   hidden: { opacity: 0, x: 50 },
   visible: {
@@ -49,10 +42,6 @@ export const slideRight = {
   },
 };
 
-/**
- * Stagger container — wraps children so they animate one after another.
- * Usage: apply to a motion.ul / motion.div wrapping animated children.
- */
 export const staggerContainer = {
   hidden: {},
   visible: {
@@ -63,8 +52,4 @@ export const staggerContainer = {
   },
 };
 
-/**
- * Default viewport options — trigger when 20 % of element enters the viewport.
- * Pass to the `viewport` prop of every motion element.
- */
 export const viewport = { once: true, amount: 0.2 };
