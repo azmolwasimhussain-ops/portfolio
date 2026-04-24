@@ -5,13 +5,13 @@ import { FaGithub } from 'react-icons/fa';
 import ProjectCard from './ProjectCard/ProjectCard';
 import { fadeUp, staggerContainer, viewport } from '../../utils/animations';
 import styles from './Projects.module.css';
-import featuredProjects from '../../data/featuredProjects'; // Import the new static data
+import featuredProjects from '../../data/featuredProjects';
 
 const Projects = () => {
   return (
     <section className={styles.projectsSection} id="projects">
       <div className="container">
-        {/* ── Section Heading ── */}
+
         <motion.h2
           className="section-title"
           variants={fadeUp}
@@ -33,7 +33,7 @@ const Projects = () => {
           A selection of things I've built recently
         </motion.p>
 
-        {/* ── Cards Grid ── */}
+
         <motion.div
           className={styles.grid}
           variants={staggerContainer}
@@ -54,7 +54,7 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        {/* ── View All CTA ── */}
+
         <motion.div
           className={styles.cta}
           variants={fadeUp}

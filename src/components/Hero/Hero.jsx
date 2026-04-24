@@ -12,7 +12,7 @@ const Hero = () => {
 
       <div className={`container ${styles.heroContainer}`}>
 
-        {/* ── Left: Text ── */}
+
         <motion.div
           className={styles.content}
           variants={staggerContainer}
@@ -39,7 +39,7 @@ const Hero = () => {
           </motion.h2>
 
           <motion.p className={styles.description} variants={fadeUp}>
-            {portfolioData.hero.intro}
+            Frontend Developer specializing in React, building modern web apps with real-world impact
           </motion.p>
 
           <motion.div className={styles.ctaGroup} variants={fadeUp}>
@@ -52,12 +52,6 @@ const Hero = () => {
             <a href="#contact" className={styles.btnSecondary} id="hero-hire-me">
               <span>{portfolioData.hero.ctaText2}</span>
             </a>
-            <a href="https://my.newtonschool.co/user/azmolwasimhussain" target="_blank" rel="noopener noreferrer" className={styles.btnSecondary} id="hero-view-profile">
-              <span>View Profile</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
           </motion.div>
 
           <motion.div className={styles.scrollHint} variants={fadeUp} aria-hidden="true">
@@ -66,7 +60,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* ── Right: Photo ── */}
+
         <motion.div
           className={styles.photoSide}
           variants={scaleIn}

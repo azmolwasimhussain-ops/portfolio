@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import styles from './Contact.module.css';
 import { portfolioData } from '../../data/portfolioData';
@@ -13,13 +14,37 @@ const socialLinks = [
 ];
 
 const Contact = () => {
-  const { email, message } = portfolioData.contact;
+  const { email, message: contactMessage } = portfolioData.contact;
   const [copied, setCopied] = useState(false);
+  const form = useRef();
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_hhryqbt',
+        'template_rqibv37',
+        form.current,
+        { publicKey: 'PskY6DmKu_Hot11hm' }
+      )
+      .then(
+        () => {
+          alert('Message sent successfully!');
+        },
+        (error) => {
+          console.error('EmailJS Error:', error);
+          alert('Failed to send message: ' + (error.text || error.message || 'Unknown error'));
+        }
+      );
+
+    e.target.reset();
   };
 
   return (
@@ -51,14 +76,14 @@ const Contact = () => {
             Let's Work Together
           </motion.h3>
           <motion.p className={styles.message} variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport} transition={{ delay: 0.15 }}>
-            {message}
+            {contactMessage}
           </motion.p>
 
             <p className={styles.replyNotice}>I usually reply within 24 hours</p>
-            <form className={styles.contactForm} onSubmit={(e) => e.preventDefault()}>
-              <input type="text" placeholder="Your Name" required className={styles.inputField} />
-              <input type="email" placeholder="Your Email" required className={styles.inputField} />
-              <textarea placeholder="Your Message" rows="5" required className={styles.textArea} />
+            <form ref={form} className={styles.contactForm} onSubmit={sendEmail}>
+              <input type="text" name="user_name" placeholder="Your Name" required className={styles.inputField} />
+              <input type="email" name="user_email" placeholder="Your Email" required className={styles.inputField} />
+              <textarea name="message" placeholder="Your Message" rows="5" required className={styles.textArea} />
               <button type="submit" className={styles.submitBtn}>
                 Send Message 🚀
               </button>
