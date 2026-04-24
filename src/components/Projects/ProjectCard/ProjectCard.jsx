@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt, FaStar } from 'react-icons/fa';
 import { fadeUp } from '../../../utils/animations';
 import styles from './ProjectCard.module.css';
 
-const ProjectCard = ({ title, description, tech = [], github, live, stars }) => {
+const ProjectCard = ({ title, description, tech = [], github, live, stars, impact }) => {
   return (
     <motion.article
       className={styles.card}
@@ -66,6 +66,7 @@ const ProjectCard = ({ title, description, tech = [], github, live, stars }) => 
 
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
+      {impact && <p className={styles.impact}>✨ {impact}</p>}
 
       <ul className={styles.techList} aria-label="Tech stack">
         {tech.map((item) => (

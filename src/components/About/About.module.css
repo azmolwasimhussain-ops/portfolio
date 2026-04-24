@@ -164,6 +164,58 @@
   flex-shrink: 0;
 }
 
+.journeySection {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem 2rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  padding-left: 10px;
+  border-left: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.timelineItem {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -16px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent-primary);
+  border: 2px solid var(--color-bg-base);
+}
+
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-left: 1rem;
+}
+
+.timelineYear {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+}
+
+.timelineTitle {
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
 .connectBtn {
   display: inline-flex;
   align-items: center;

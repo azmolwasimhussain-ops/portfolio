@@ -3,8 +3,10 @@ export const portfolioData = {
     name: "Azmol Wasim Hussain",
     title: "Frontend Developer | AI/ML Enthusiast",
     intro:
-      "I craft beautiful, performant web experiences and explore the cutting edge of Artificial Intelligence. Passionate about turning complex ideas into elegant, accessible interfaces.",
+      "I build fast, modern React applications & explore AI-driven products",
     ctaText: "View Projects",
+    ctaText2: "Hire Me",
+    badge: "🟢 Open to Internships (Frontend / React)",
   },
 
   about: {
@@ -24,6 +26,11 @@ When I'm not coding, you'll find me reading about AI research, experimenting wit
       "Open Source Contributor",
       "Continuous Learner",
     ],
+    journey: [
+      { year: "2025", title: "Started Web Development" },
+      { year: "2025", title: "Built multiple projects" },
+      { year: "2026", title: "Exploring AI/ML" }
+    ],
   },
 
   skills: [
@@ -39,23 +46,20 @@ When I'm not coding, you'll find me reading about AI research, experimenting wit
       ],
     },
     {
-      category: "AI / ML",
+      category: "Learning",
       items: [
+        "Node.js",
         "Python",
-        "NumPy / Pandas",
-        "Scikit-learn",
-        "TensorFlow (basics)",
-        "Jupyter Notebook",
-        "Data Visualisation",
+        "AI/ML Basics",
+        "Data Structures",
       ],
     },
     {
-      category: "Tools & Others",
+      category: "Tools",
       items: [
         "Git & GitHub",
         "VS Code",
         "Figma (basics)",
-        "Node.js",
         "REST APIs",
         "Linux CLI",
       ],

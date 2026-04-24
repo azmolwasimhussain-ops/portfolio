@@ -13,8 +13,8 @@
 }
 
 .card:hover {
-  border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 16px 48px rgba(99, 102, 241, 0.25);
 }
 
 .glowAccent {
@@ -106,9 +106,21 @@
   color: var(--color-text-secondary);
   font-size: 0.95rem;
   line-height: 1.75;
-  flex-grow: 1;
   position: relative;
   z-index: 1;
+}
+
+.impact {
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  border-left: 3px solid var(--color-accent-primary);
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  flex-grow: 1;
 }
 
 .techList {

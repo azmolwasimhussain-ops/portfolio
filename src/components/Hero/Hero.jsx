@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
+import { portfolioData } from '../../data/portfolioData';
 import { fadeUp, scaleIn, slideLeft, slideRight, staggerContainer, viewport } from '../../utils/animations';
 
 const Hero = () => {
@@ -18,6 +19,10 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
+          <motion.div className={styles.badge} variants={fadeUp}>
+            {portfolioData.hero.badge}
+          </motion.div>
+
           <motion.p className={styles.greeting} variants={fadeUp}>
             👋 Hello, I'm
           </motion.p>
@@ -34,17 +39,18 @@ const Hero = () => {
           </motion.h2>
 
           <motion.p className={styles.description} variants={fadeUp}>
-            I craft beautiful, performant web experiences and explore the cutting edge
-            of Artificial Intelligence. Passionate about turning complex ideas into
-            elegant, accessible interfaces that people love to use.
+            {portfolioData.hero.intro}
           </motion.p>
 
           <motion.div className={styles.ctaGroup} variants={fadeUp}>
             <a href="#projects" className={styles.btnPrimary} id="hero-view-projects">
-              <span>View Projects</span>
+              <span>{portfolioData.hero.ctaText}</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
               </svg>
+            </a>
+            <a href="#contact" className={styles.btnSecondary} id="hero-hire-me">
+              <span>{portfolioData.hero.ctaText2}</span>
             </a>
             <a href="/resume.pdf" download className={styles.btnSecondary} id="hero-download-resume">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

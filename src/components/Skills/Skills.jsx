@@ -6,8 +6,8 @@ import { fadeUp, staggerContainer, viewport } from '../../utils/animations';
 
 const categoryIcons = {
   Frontend: '🖥️',
-  'AI / ML': '🤖',
-  'Tools & Others': '🛠️',
+  Learning: '🧠',
+  Tools: '🛠️',
 };
 
 const Skills = () => {
@@ -79,13 +79,13 @@ const Skills = () => {
           whileInView="visible"
           viewport={viewport}
         >
-          <span className={styles.learningLabel}>Currently exploring →</span>
-          {['Next.js', 'PyTorch', 'Docker', 'TypeScript'].map((item) => (
+          <span className={styles.learningLabel}>Currently Working On →</span>
+          {['Building AI-based apps', 'Improving DSA', 'Learning backend (Node.js)'].map((item) => (
             <motion.span
               key={item}
               className={styles.learningTag}
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
               {item}
             </motion.span>

@@ -54,35 +54,15 @@ const Contact = () => {
             {message}
           </motion.p>
 
-          <motion.div className={styles.emailRow} variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport} transition={{ delay: 0.2 }}>
-            <FaEnvelope className={styles.emailIcon} aria-hidden="true" />
-            <span className={styles.emailText}>{email}</span>
-            <motion.button
-              className={styles.copyBtn}
-              onClick={handleCopyEmail}
-              aria-label="Copy email address"
-              id="contact-copy-email"
-              whileTap={{ scale: 0.94 }}
-            >
-              {copied ? '✓ Copied!' : 'Copy'}
-            </motion.button>
-          </motion.div>
-
-          <motion.a
-            href={`mailto:${email}`}
-            className={styles.mailBtn}
-            id="contact-say-hello"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-            transition={{ delay: 0.25 }}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            Say Hello 👋
-          </motion.a>
-
+            <p className={styles.replyNotice}>I usually reply within 24 hours</p>
+            <form className={styles.contactForm} onSubmit={(e) => e.preventDefault()}>
+              <input type="text" placeholder="Your Name" required className={styles.inputField} />
+              <input type="email" placeholder="Your Email" required className={styles.inputField} />
+              <textarea placeholder="Your Message" rows="5" required className={styles.textArea} />
+              <button type="submit" className={styles.submitBtn}>
+                Send Message 🚀
+              </button>
+            </form>
           <motion.div
             className={styles.socials}
             variants={staggerContainer}

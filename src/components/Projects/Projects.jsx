@@ -47,8 +47,9 @@ const Projects = () => {
               title={project.title}
               description={project.description}
               tech={project.tech}
-              github={project.github === '#' ? null : project.github} // Skip rendering if `#`
-              live={project.live === '#' ? null : project.live} // Ensure no dead links
+              github={project.github === '#' ? null : project.github}
+              live={project.live === '#' ? null : project.live}
+              impact={project.impact}
             />
           ))}
         </motion.div>

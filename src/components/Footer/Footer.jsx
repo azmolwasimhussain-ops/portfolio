@@ -22,6 +22,10 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footerContainer}`}>
+        <div className={styles.ctaWrapper}>
+          <h3 className={styles.ctaText}>🚀 Ready to build something amazing together? Let's connect.</h3>
+        </div>
+
         <a href="#home" className={styles.logo}>
           Azmol<span className={styles.dot}>.</span>
         </a>

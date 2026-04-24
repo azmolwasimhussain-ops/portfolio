@@ -5,7 +5,7 @@ import { portfolioData } from '../../data/portfolioData';
 import { fadeUp, slideLeft, slideRight, scaleIn, staggerContainer, viewport } from '../../utils/animations';
 
 const About = () => {
-  const { bio, stats, funFacts } = portfolioData.about;
+  const { bio, stats, funFacts, journey } = portfolioData.about;
   const paragraphs = bio.split('\n\n').filter(Boolean);
 
   return (
@@ -95,6 +95,27 @@ const About = () => {
                   </li>
                 ))}
               </ul>
+            </motion.div>
+
+            <motion.div
+              className={styles.journeySection}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              <h3 className={styles.tagsHeading}>My Journey</h3>
+              <div className={styles.timeline}>
+                {journey.map((item, i) => (
+                  <div key={i} className={styles.timelineItem}>
+                    <div className={styles.timelineDot} />
+                    <div className={styles.timelineContent}>
+                      <span className={styles.timelineYear}>{item.year}</span>
+                      <p className={styles.timelineTitle}>{item.title}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
 
             <motion.a
